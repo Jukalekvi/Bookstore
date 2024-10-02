@@ -55,4 +55,12 @@ public class BookController {
         return "redirect:/booklist";
     }
     
+    //Kirjan muokkaamis-sivulle ID:n perusteella siirtyminen
+    @GetMapping("editbook/{id}")
+    public String showEditBookForm(@PathVariable("id") Long bookId, Model model) {
+        Book book = bookRepository.findById(bookId).orElseThrow(() -> new IllegalArgumentException("Virheellinen kirjan ID: " + bookId));
+        model.addAttribute("book", book);
+        return "editbook";
+    }
+    
 }
