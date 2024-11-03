@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import hh.backend.jukka.com.bookstore.domain.Book;
 import hh.backend.jukka.com.bookstore.repository.BookRepository;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
