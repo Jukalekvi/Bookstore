@@ -9,13 +9,15 @@
 <body>
     <h1>Book List</h1>
     
-    <table class="table table-stripped">
+    <table class="table table-striped">
         <tr>
             <th>Title</th>
             <th>Author</th>
             <th>Year</th>
             <th>ISBN</th>
             <th>Price</th>
+            <th>Category</th> <!-- Uusi sarake kategoriassa -->
+            <th>Actions</th> <!-- Toimintojen sarake -->
         </tr>
         <tr th:each="book : ${books}">
             <td th:text="${book.title}"></td>
@@ -23,6 +25,7 @@
             <td th:text="${book.publicationYear}"></td>
             <td th:text="${book.isbn}"></td>
             <td th:text="${book.price}"></td>
+            <td th:text="${book.category != null ? book.category.name : 'No Category'}"></td> <!-- Kategorian nimen näyttäminen -->
             <td>
                 <a th:href="@{/deletebook/{id}(id=${book.id})}" class="btn btn-danger">Delete</a>
                 <a th:href="@{/editbook/{id}(id=${book.id})}" class="btn btn-primary">Edit</a>
